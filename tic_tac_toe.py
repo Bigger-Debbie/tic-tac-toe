@@ -24,10 +24,10 @@ class TicTacToe:
         print(f"\n{self._draw_logo()}\n\n")
         print("\t\tWelcome to Tic Tac Toe, get three in a row to win!\n")
         print("First, I got a couple questions for ya!\n")
+        self.player_one['name'] = input("Player one, whats your name: ")\
+                .lower().strip()
 
         while True:
-            self.player_one['name'] = input("Player one, whats your name: ")\
-                .lower().strip()
             self.get_opponent()
             self.get_tokens()
 
@@ -71,6 +71,7 @@ class TicTacToe:
             while True:
                 again = input("Would you like to play again? (y/n): ")
                 if again == 'y':
+                    self.computer_player = None
                     self.game_over = False
                     self.moves = 0
                     self.avail_moves = [1, 2, 3, 4, 5, 6, 7, 8, 9]
